@@ -11,6 +11,7 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import {useDispatch, useSelector} from 'react-redux';
 import {logout} from '../../redux/Actions/auth';
 import Cart from '../../../assets/cart.png';
+import Logo from '../../../assets/logo.png';
 
 const Navbar = ({navigation}) => {
   const user = useSelector(state => state.auth.user);
@@ -37,7 +38,9 @@ const Navbar = ({navigation}) => {
           onPress={() => {
             navigation.navigate('Shop');
           }}>
-          <Text style={{color: 'white'}}>Farm-Wing</Text>
+          <View style={{alignItems: 'center'}}>
+            <Image source={Logo} style={{width: 25, height: 25}} />
+          </View>
         </TouchableWithoutFeedback>
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <TouchableWithoutFeedback
